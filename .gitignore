@@ -2,6 +2,10 @@
 Thumbs.db
 ehthumbs.db
 
+# eclipse files
+.classpath
+.project
+
 # Folder config file
 Desktop.ini
 
@@ -41,3 +45,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+/target
+/.settings
+/src/main/webapp/home
