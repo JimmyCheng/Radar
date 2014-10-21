@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-init-method="init">
+
+	<context:property-placeholder location="classpath:/env.properties" />
+
+	<bean id="svnRepoFactory" class="com.coderadar.svn.SvnRepoFactory">
+		<property name="svnUser" value="${svn.user}" />
+		<property name="svnPwd" value="${svn.pwd}" />
+		<property name="svnRoot" value="${svn.root}" />
+	</bean>
+
+	<bean id="svnRepositoryPool" class="com.coderadar.svn.SvnRepositoryPool">
+		<property name="poolSize" value="2" />
+		<property name="svnRepoFactory" ref="svnRepoFactory" />
+	</bean>
+
+	<bean id="svnClientManagerFactory" class="com.coderadar.svn.SvnClientManagerFactory">
+		<property name="authManager" ref="svnAuthManagerFactory" />
+	</bean>
+
+	<bean id="svnAuthManagerFactory" class="com.coderadar.svn.SvnAuthManagerFactory">
+		<property name="svnUser" value="${svn.user}" />
+		<property name="svnPwd" value="${svn.pwd}" />
+	</bean>
+
+	<bean id="svnRepositoryDAO" class="com.coderadar.svn.SvnRepositoryDAO">
+		<property name="svnRepositoryPool" ref="svnRepositoryPool" />
+		<property name="svnClientManagerFactory" ref="svnClientManagerFactory" />
+	</bean>
+
+</beans>

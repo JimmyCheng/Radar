@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ font-family:Arial, Helvetica, sans-serif; font-size:12px; margin:0; padding:0;}
+
+#logo_text{
+	/*text-shadow:1px 1px 0 #CCC, 2px 2px 0 #CCC;*/
+	font-family: 'Ericsson Capital TT';
+}
+#logo_text #brace {
+	color:#EEE;
+	font-size:28px;
+}
+
+#logo_text #logotext {
+	color:blue;
+	font-size:24px;
+	/*text-shadow:0 0 1px gray;*/
+}
+
+#header{
+	background-image: url("../images/Login_logo.png");
+    background-position: 17px 13px;
+    background-repeat: no-repeat;
+    background-size: 26px auto;
+    height: 14px;
+    overflow: hidden;
+    padding: 20px;}
+
+#header .title{
+	font-family: verdana;
+    font-size: 31px;
+    margin-top: -14px;
+    padding-left: 38px;
+	}
+
+#container{ padding:20px;}
+.e-applicationBar{
+    background: -moz-linear-gradient(left center , #A1C517 0px, #009045 25%, #0082B6 50%, #151F77 75%, #DB004F 100%) repeat scroll 0 0%, none repeat scroll 0 0 #0066B3;
+    content: "";
+    height: 4px;
+    width: 100%;
+}
+.findforminput{}
+.foundtable{
+	border: 1px solid #CCCCCC;
+    bottom: 15px;
+    left: 20px;
+    overflow: auto;
+    position: absolute;
+    right: 20px;
+    top: 250px;
+	}
+.scrolling_outer{
+	bottom: 20px;
+    left: 20px;
+    position: absolute;
+    right: 20px;
+    top: 266px;
+	}
+.search{ background-color:#f8f8f8; padding:10px; margin-bottom:15px; }
+.search div{ margin-bottom:5px;}
+.search-item{
+	display: block;
+    float: left;
+    line-height: 25px;
+    padding: 0 5px;
+    text-align: right;
+    width: 100px;
+	}
+.search input[type="text"]{
+	border: 1px solid #CCCCCC;
+    border-radius: 5px 5px 5px 5px;
+    height: 20px;
+    padding: 2px;
+	}
+.grantstable-header{
+	padding:5px;
+	text-align: left;
+	background: -moz-linear-gradient(top, #ffffff, #cecdcd), #ecebeb;
+	background: -o-linear-gradient(top, #ffffff, #cecdcd), #ecebeb;
+	background: -ms-linear-gradient(top, #ffffff, #cecdcd), #ecebeb;
+	background: linear-gradient(top, #ffffff, #cecdcd), #ecebeb;
+	line-height:20px;
+	border-bottom:1px solid #999;
+	font-size: 13px;
+	}
+.foundtable-wrap table td{ padding:5px; line-height:22px;}
+
+  color:#fff;
+}
+
+}
+

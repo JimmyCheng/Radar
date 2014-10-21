@@ -1,0 +1,218 @@
+*{
+	font-family:Verdana,arial;font-size:12px;color:black;
+}
+h2 {
+	font-size:20px;
+}
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	/*background:transparent url('bg.jpg') 0 0 repeat;*/
+	clear:both;
+}
+
+.gray{
+	color:gray;
+}
+
+a {
+	text-decoration:underline;
+	font-size:13px;
+	color:blue;
+}
+a:visited{
+	color:gray;
+}
+
+.mask {
+	z-index: 999;
+	clear:both;
+}
+
+#search_area {
+	display:block;
+	min-width:1200px;
+	position:absolute;
+}
+
+.center {
+	padding:0;
+	margin:0;
+	position: relative;
+	clear:both;
+}
+
+.outrange {
+	left:100%;
+}
+#logo_form{
+	height:100px;
+	min-width:805px;
+	background:rgba(255,255,255,0.5);
+	padding:10px 10px 10px 25px;
+	/*
+	-webkit-border-radius:0 20px 20px 0 ;
+	-moz-border-radius:0 20px 20px 0;
+	-border-radius:0 20px 20px 0;
+	*/
+	display:block;
+	position:absolute;
+}
+
+.search_input {
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-border-radius:5px;
+	width:380px;
+	height:32px;
+	border:solid 2px #eee;
+	padding:5px;
+	color:lightgray;
+	font-weight:bold;
+	font-size:15px;
+	font-family:verdana,arial;
+}
+#path{
+	width:350px;
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-border-radius:5px;
+	border:solid 2px #eee;
+	color:lightgray;
+	font-weight:bold;
+	font-size:12px;
+	font-family:verdana,arial;
+	height:24px;
+}
+
+#search_btn,#doFilterButton{
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	-border-radius:5px;
+	border:solid 2px #EEE;
+	color:#eee;
+	height:45px;
+	background:darkblue;
+	font-weight:bold;
+	width:100px;
+	margin-bottom:8px;
+	vertical-align:middle;
+}
+
+#search_btn:active {
+	color:black;
+}
+
+#page_nav{
+	text-align:right;
+	position:absolute;
+	width:840px;
+	min-width:840px;
+	top:180px;
+	clear:both;
+	opacity:0;
+}
+
+#result_container {
+	background:rgba(255,255,255,0.5);
+	position:absolute;
+	top:200px;
+	padding:10px 10px 10px 25px ;
+	/*
+	-webkit-border-radius:0 20px 20px 0 ;
+	-moz-border-radius:0 20px 20px 0;
+	-border-radius:0 20px 20px 0;
+	*/
+	opacity:0;
+	clear:both;
+}
+
+#loading_div {
+	position:absolute;
+	top:-100px;
+	left:-20px;
+	opacity:0;
+	text-align:center;
+	font-family: 'Ericsson Capital TT';
+	color:darkblue;
+	font-size:22px;
+}
+
+.hidden {
+	display:none;
+}
+
+#warning_div{
+	color:red;
+	font-size:13px;
+	position:absolute;
+	top:0px;
+	right:0;
+	width:100%;
+	min-width:300px;
+	height:30px;
+	min-height:30px;
+	opacity:0;
+	text-align:right;
+	/*
+	background:rgba(255,255,255,0.5);
+	padding:10px 10px 10px 25px;
+	-webkit-border-radius:20px 0 0 20px;
+	-moz-border-radius:20px 0 0 20px;
+	-border-radius:20px 0 0 20px;
+	*/
+	display:block;
+}
+
+#result_table_wrap{
+	opacity:1;
+	position:absolute;
+	left:0;
+	width:auto;
+	padding:0 20px 0 20px;
+}
+#grantstable {
+	width:100%;
+	position:relative;
+}
+
+.data_rows {
+	opacity:0;
+	height:30px;
+	min-height:30px;
+}
+
+#result_filter{
+	font-family: verdana,arial;
+	font-size:12px;
+	position:absolute;
+	top:-100px;
+	right:0;
+	width:400px;
+	min-width:300px;
+	min-height:100px;
+	background:rgba(255,255,255,0.5);
+	padding:10px;
+	/*
+	-webkit-border-radius:20px 0 0 20px;
+	-moz-border-radius:20px 0 0 20px;
+	-border-radius:20px 0 0 20px;
+	*/
+	display:block;
+	opacity:0;
+}
+ul,li {
+	list-style:none;margin:0;padding:0;
+}
+li {
+	line-height:24px;
+}
+#searchResultSummary{
+	font-size:15px;
+	font-family: verdana,arial;
+	font-weight:bold;
+}
+#resultNumberDisplay,.searchKeyword {
+	color:red;
+}

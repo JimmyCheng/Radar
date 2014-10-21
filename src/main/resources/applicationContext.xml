@@ -1,0 +1,54 @@
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-init-method="init">
+
+	<context:annotation-config />
+	<context:property-placeholder location="classpath:/env.properties" />
+
+	<!-- URL Queue: common data holder -->
+	<bean id="urlQueue" class="com.coderadar.util.UrlQueue">
+		<property name="capacity" value="${working.queue.capacity}" />
+	</bean>
+
+	<!-- Jimmy: put this value to the property file. -->
+	<bean id="urlUtil" class="com.coderadar.util.UrlUtil">
+	    <property name="releaseList" value="#{'${repo.release}'.split(',')}" />
+		<property name="excludeFileList" value="#{'${repo.file.exclude}'.split(',')}" />
+		<property name="excludeDirList" value="#{'${repo.dir.exclude}'.split(',')}" />
+	</bean>
+
+	<!-- Task: Fetch from SVN generate URL. -->
+	<bean class="com.coderadar.svn.SvnFullIndexMgrImpl">
+		<property name="urlUtil" ref="urlUtil" />
+		<property name="urlQueue" ref="urlQueue" />
+		<property name="solrUrlService" ref="solrUrlService" />
+	    <property name="solrSourceService" ref="solrSourceService" />  <!-- will be removed -->
+	    <property name="svnRepositoryDAO" ref="svnRepositoryDAO" />
+	</bean>
+
+	<bean id="fileUrlQueue" class="java.util.concurrent.ArrayBlockingQueue">
+		<constructor-arg value="200" />
+	</bean>
+
+	<bean id="fileSaveWorkGenerator" class="com.coderadar.worker.fileUrlToSourceSolr.FileSaveWorkGenerator">
+		<property name="fileUrlQueue" ref="fileUrlQueue" />
+		<property name="solrUrlService" ref="solrUrlService" />
+	</bean>
+
+	<bean id="fileSaveWorkConsumer" class="com.coderadar.worker.fileUrlToSourceSolr.FileSaveWorkConsumer">
+		<property name="fileUrlQueue" ref="fileUrlQueue" />
+	    <property name="solrUrlService" ref="solrUrlService" />
+		<property name="solrSourceService" ref="solrSourceService" />
+	</bean>
+
+	<bean class="com.coderadar.worker.fileUrlToSourceSolr.FileSaveMgr">
+		<property name="fileUrlQueue" ref="fileUrlQueue" />
+		<property name="solrUrlService" ref="solrUrlService" />
+		<property name="fileSaveWorkGenerator" ref="fileSaveWorkGenerator" />
+		<property name="fileSaveWorkConsumer" ref="fileSaveWorkConsumer" />
+	</bean>
+
+</beans>

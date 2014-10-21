@@ -1,0 +1,268 @@
+
+a {
+	text-decoration:none;
+}
+.item-name{
+	font-size:20px;
+}
+.item-link{
+	font-size:9px;
+	color:gray;
+	word-wrap:break-word;
+	-moz-hyphens:auto;
+	-ms-hyphens:auto;
+	-webkit-hyphens:auto;
+	hyphens:auto;
+}
+tr,td{
+	height:25px;line-height:25px;
+}
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	clear:both;
+}
+/*
+header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  padding: 30px 0;
+  background: #fff;
+  background: rgba(245, 245, 245, 0.95);
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1);
+}*/
+
+
+.alert-success{
+  margin-top:10px;
+}
+.ul-inline{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.ul-inline li{
+  display:inline-block;
+}
+.ul-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.ul-list li{
+	display: list;
+}
+#advance-search{
+	position:absolute;
+	right:0;
+	top:0;
+	height:20px;
+	line-height:20px;
+	font-size:12px;
+	padding-right:10px;
+}
+#div-search-form{
+	width:650px;
+	clear:both;
+	float:left;
+	padding-left:30px;
+	display:inline-block;
+}
+#div-search-options {
+	float:right;
+	width:350px;
+	display:inline-block;
+	text-align:right;
+	padding-right:10px;
+}
+#result-summary{
+  position: fixed;
+  top: 110px;
+  z-index: 9;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.95);
+  text-align:right;
+}
+#result-container {
+	position:relative;
+	margin:0;
+	width:100%;
+	min-height:500px;
+	display:inline-block;
+}
+#result-function {
+	width:20%;
+	height:inherit;
+	display:inline-block;
+	padding-left:20px;
+	float:left;
+	clear:both;
+}
+#search-result {
+    margin-top:50px;
+	position:relative;
+	/* margin-left:300px; */
+	min-width:80%;
+	float:left;
+}
+#pagination{
+	padding:3px 0;
+}
+
+
+#content-preview{
+	position:relative;
+	top:0;
+	margin-left:920px;
+	min-width:450px;
+	float:left;
+}
+#and-option-type,#or-option-type {
+	padding:3px;
+	height:20px;	
+}
+.option-off{
+	border:none;
+	padding:10px;
+	background:rgba(230,230,230,.5);
+	color:gray;
+	max-height:35px;
+}
+.option-off:hover{
+	border:none;
+	padding:10px;
+	background:rgba(170,178,147,.8);
+	color:gray;
+	max-height:35px;
+}
+.option-on{
+	border:none;
+	padding:10px;
+	background:rgba(65, 163, 23,.8);
+	color:#fff;
+	max-height:35px;
+}
+
+#logo-text {
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size:42px;
+  color:rgba(154,159,139,.8);
+  padding:0 20px 0 0;
+  text-shadow: 1px 1px 1px #fff;
+  line-height:30px;
+}
+.menu-text{
+  font-size:12px;
+  color:gray;
+  padding:5px;
+}
+.menu-text:hover{
+	color:rgba(170,178,147,.8);
+}
+.selected{
+	background:rgba(65, 163, 23,.8);
+	color:#fff;
+}
+#result-function .ul_list{
+	padding-left:15px;
+}
+.highlight-text{
+	width:800px;
+	height:auto;
+	line-height:120%;
+}
+em{
+	color:red;
+}
+.ul_list{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.ul_list .pdl10 {
+	padding-left:15px;
+}
+.ul_list .pdl10 li{
+    display:list-item;
+    line-height:24px;
+}
+.ul_list li{
+  display:list-item;
+  line-height:30px;
+}
+.ul_list .lh20 {
+	line-height:20px;
+}
+.subtitle{
+	background:rgba(245，245，245,.8);
+	color:rgba(65, 163, 23,.8);
+	font-size:13px;
+	line-height:30px;
+}
+.search_input {
+  width:300px;
+  height:20px;
+  border:solid 1px #ccc;
+  padding:7px;
+  color:#ccc;
+  font-weight:bold;
+}
+
+#search_btn{
+	border:none;
+	padding:10px;
+	background:rgba(154,159,139,.8);
+	color:#fff;
+}
+#search_btn:hover{
+	border:none;
+	padding:10px;
+	background:rgba(170,178,147,.8);
+	color:#fff;
+}
+#search_btn:active{
+  border:none;
+  color:#fff;
+  background:rgba(65, 163, 23,.8);
+  padding:10px;
+}
+#advanced-search-div{
+	position:absolute;
+	top:20px;
+	right:10px;
+	width:0;
+	height:0;
+	opacity:0;
+	z-index:13;
+	display:block;
+	background:rgba(154,159,139,.8);
+}
+
+#outline {
+	padding:10px;
+	position:fixed;
+	top:0;
+	width:330px;
+	float:left;
+	display:block;
+	margin-left:1110px;
+	background:rgba(230,230,230,.5);
+	height:100%;
+	min-height:500px;
+}
+#sourcecode{
+	position:relative;
+	float:left;
+	width:1000px;
+	display:block;
+	text-align:left;
+}

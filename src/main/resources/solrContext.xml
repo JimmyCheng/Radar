@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
+	default-init-method="init">
+	
+    <context:property-placeholder location="classpath:/env.properties" />
+
+	<bean id="solrUrlServer" class="org.apache.solr.client.solrj.impl.CommonsHttpSolrServer">
+	  <constructor-arg>
+	      <value>${solr.api.url.fileUrls}</value>
+	  </constructor-arg>
+	  <property name="connectionTimeout" value="100000"/>
+	  <property name="defaultMaxConnectionsPerHost" value="100"/>
+	  <property name="maxTotalConnections" value="100"/>
+	  <property name="followRedirects" value="false"/>
+	  <property name="allowCompression" value="true"/>
+	  <property name="maxRetries" value="1"/>
+	</bean>
+	
+	<bean id="solrSourceServer" class="org.apache.solr.client.solrj.impl.CommonsHttpSolrServer">
+	  <constructor-arg>
+	      <value>${solr.api.url.sources}</value>
+	  </constructor-arg>
+	  <property name="connectionTimeout" value="100000"/>
+	  <property name="defaultMaxConnectionsPerHost" value="100"/>
+	  <property name="maxTotalConnections" value="100"/>
+	  <property name="followRedirects" value="false"/>
+	  <property name="allowCompression" value="true"/>
+	  <property name="maxRetries" value="1"/>
+	</bean>
+
+	<bean id="solrUrlDAO" class="com.coderadar.solr.dao.SolrUrlDAO" >
+	  <property name="solrUrlServer" ref="solrUrlServer" />
+	</bean>
+
+	<bean id="solrSourceDAO" class="com.coderadar.solr.dao.SolrSourceDAO">
+		<property name="solrSourceServer" ref="solrSourceServer" />
+	</bean>
+	
+	<bean id="solrSourceService" class="com.coderadar.solr.service.SolrSourceService">
+		<property name="repositoryDAO" ref="svnRepositoryDAO" />
+		<property name="solrSourceDAO" ref="solrSourceDAO" />
+	    <property name="urlUtil" ref="urlUtil" />
+	</bean>
+
+	<bean id="solrUrlService" class="com.coderadar.solr.service.SolrUrlService">
+		<property name="solrUrlDAO" ref="solrUrlDAO" />
+	</bean>
+</beans>

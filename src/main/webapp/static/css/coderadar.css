@@ -1,0 +1,158 @@
+.navbar{
+background: #f5f5f5;
+height:72px;
+margin-bottom:0px;
+}
+
+.navbar>.container{
+width: 100%;
+}
+
+.navbar-header{
+margin-top: -9px;
+}
+
+.nav-pills{
+margin-top:10px;
+}
+
+#top-search {
+    margin-top:20px;
+	width: 50%;
+}
+
+#result-filter{
+   margin-top:50px;
+}
+
+#search-result {
+    margin-top:50px;
+    margin-left:20px;
+	position:relative;
+	/* margin-left:300px; */
+	min-width:80%;
+	float:left;
+}
+
+
+body> .container{
+  width: 1222px;
+  min-height: 600px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, .4);
+}
+
+.container .jumbotron {
+height:320px;
+background-image:url('../img/science.jpg');
+border-radius: 0px;
+margin-left:-15px;
+margin-right:-15px;
+}
+
+.container .jumbotron .row{
+margin-top: 80px;
+margin-left:10%;
+}
+
+.jumbotron .input-group{
+width:60%;
+position:auto;
+}
+
+#main-search {
+height: 65px;
+border: 0;
+width: 70%;
+border-radius: 4px 0 0 4px;
+padding: 10px;
+}
+
+#main-search-button {
+margin-left: -6px;
+height: 65px;
+width:10%;
+margin-top: -3px;
+border-radius: 0 4px 4px 0;
+border: 0;
+padding: 20px;
+}
+
+.features{
+  padding: 0 60px;
+  }
+
+.col-lg-12 h2{
+	text-align: center
+}
+
+.gmail-feature-set {
+	position: relative
+}
+
+.gmail-feature-set img,.gmail-feature-set div {
+	float: left
+}
+
+[dir=rtl] .gmail-feature-set img,[dir=rtl] .gmail-feature-set div {
+	float: right
+}
+.gmail-feature-set img {
+	height: 184px;
+	width: 184px
+}
+
+.gmail-feature-set div {
+	position: absolute;
+	left: 200px;
+	top: 30px;
+	width: 55%
+}
+
+[dir=rtl] .gmail-feature-set div {
+	left: auto;
+	right: 200px
+}
+
+@media screen and (max-width:475px) {
+	.gmail-feature-set div {
+		position: static;
+		left: auto;
+		top: auto;
+		width: 100%;
+		text-align: left
+	}
+	.gmail-feature-set img,.gmail-feature-set div {
+		float: none
+	}
+	.gmail-feature-set {
+		text-align: center
+	}
+	.storage-folder-about {
+		top: 95px;
+		left: 0 !important;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto
+	}
+}
+
+.footer {
+	background: #f5f5f5;
+    clear: both
+}
+    
+#maia-footer-local {
+	display: block;
+	height: 100px;
+	margin: auto 0;
+	vertical-align: middle
+}
+
+.gmail-footer {
+	padding-top: 40px
+}
+
+.bs-docs-footer{
+  background: #f5f5f5;
+  margin-top:0px;
+}
