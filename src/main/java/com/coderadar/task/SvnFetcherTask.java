@@ -35,7 +35,7 @@ public class SvnFetcherTask implements Runnable {
 		logger.info("There are {} SvnFetcher task running ....", taskExecutor.getActiveCount());
 
 		int avaliableTaskCount = getAvaliableTaskCount();
-		// Jimmy: 从urlQueue中消耗一定数量的task.
+
 		Collection<UrlOperation> urls = urlQueue.take(avaliableTaskCount);
 		Iterator<UrlOperation> iterator = urls.iterator();
 		while (iterator.hasNext()) {

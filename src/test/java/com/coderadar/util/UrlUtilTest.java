@@ -11,7 +11,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.coderadar.util.UrlUtil;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:com/coderadar/util/UrlUtil.xml"})
+@ContextConfiguration(locations = {"classpath:UrlUtil.xml"})
 public class UrlUtilTest {
 	
     @Autowired

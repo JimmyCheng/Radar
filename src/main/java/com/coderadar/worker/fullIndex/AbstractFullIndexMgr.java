@@ -43,23 +43,28 @@ public abstract class AbstractFullIndexMgr {
 		this.urlQueue = urlQueue;
 	}
 
+	/**
+	 * The init method.
+	 * This method is defined in the applicationContext.xml as the default initialization
+	 * method. So it will be executed after the instance is created.
+	 */
 	public void init() {
 		new Thread() {
 			@Override
 			public void run() {
 				try {
-					Thread.sleep(15000);  //jimmy:should update to 15000
+					Thread.sleep(15000);
  				} catch (InterruptedException e) {
-					// do nothing
 				}
-				startIndex();
+				//startIndex(); // Jimmy. for debug, don't want to trigger the start index operation.
 			}
 
 		}.start();
 	}
 
 	private void startIndex() {
-		//clearAllData();  //Clear all the data and start from beginning, usally for debugging.
+		//Clear all the data and start from beginning, usally for debugging.
+		//clearAllData();  
 		
 		if (solrUrlService.count("*:*") < 0) {
 			try {

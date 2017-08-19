@@ -55,7 +55,7 @@ public class UrlOperation implements SolrBean {
 		}
 		
 		String opAndUrl = StringUtils.substringAfter(s, ":");
-		String op= StringUtils.substringBefore(opAndUrl, ":");
+		String op= StringUtils.substringBefore(s, ":");
 		String url = StringUtils.substringAfter(opAndUrl, ":");
 		
 		IndexOperation valueOf = null;

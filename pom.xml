@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.coderadar</groupId>
-	<artifactId>coderadar</artifactId>
+	<artifactId>radar</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<description>the code search engine</description>
 
@@ -164,12 +164,12 @@
 					<artifactId>maven-jetty-plugin</artifactId>
 					<version>6.1.26</version>
 					<configuration>
-						<contextPath>/coderadar</contextPath>
+						<contextPath>/</contextPath>
 						<scanIntervalSeconds>10</scanIntervalSeconds>
 						<classesDirectory>${basedir}/target/classes</classesDirectory>
 						<connectors>
 							<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-								<port>9191</port>
+								<port>80</port>
 								<maxIdleTime>60000</maxIdleTime>
 							</connector>
 						</connectors>

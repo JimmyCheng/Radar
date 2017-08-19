@@ -35,7 +35,6 @@ import com.coderadar.solr.bean.SourceBean;
 import com.coderadar.solr.service.SolrSourceService;
 
 @Controller
-@RequestMapping(value = "/")
 public class MainController{
 
 	final Logger logger = Logger.getLogger(MainController.class.getName());
@@ -51,7 +50,7 @@ public class MainController{
 	@Autowired
 	private SolrSourceService solrSourceService;
 
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value= "/")
     public String firstPage() {
         return "index";
     }
